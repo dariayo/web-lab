@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="image/cat.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Web</title>
+</head>
+
+<body background="image/wallpaper.avif">
+    <script src="js/jquery-3.7.1.js"></script>
+    <header class="header">
+        <div>
+            Шевченко Дарья P3230
+            <br>
+            Вариант 1117
+        </div>
+    </header>
+
+
+    <div class="content">
+
+        <div class="svg-class">
+            <svg width="500" height="440" class="svg-graphic">
+
+                <line class="axis_x" x1="0" x2="500" y1="220" y2="220" stroke="black"></line>
+                <polygon fill="black" points="500,220 480,210 480,230" stroke="black"></polygon>
+                <line class="axis_y" x1="250" x2="250" y1="0" y2="440" stroke="black"></line>
+                <polygon fill="black" points="250,0 260,25 240,25" stroke="black"></polygon>
+
+                <line stroke="black" x1="400" x2="400" y1="220" y2="230"></line>
+                <line stroke="black" x1="325" x2="325" y1="220" y2="230"></line>
+
+                <line stroke="black" x1="175" x2="175" y1="220" y2="230"></line>
+                <line stroke="black" x1="100" x2="100" y1="220" y2="230"></line>
+
+                <line stroke="black" x1="255" x2="245" y1="370" y2="370"></line>
+                <line stroke="black" x1="255" x2="245" y1="295" y2="295"></line>
+
+                <line stroke="black" x1="255" x2="245" y1="70" y2="70"></line>
+                <line stroke="black" x1="255" x2="245" y1="145" y2="145"></line>
+
+                <text fill="black" x="255" y="295">-R/2</text>
+                <text fill="black" x="255" y="75">R</text>
+
+                <text fill="black" x="255" y="375">-R</text>
+                <text fill="black" x="255" y="160">R/2</text>
+
+                <text fill="black" x="395" y="220">R</text>
+                <text fill="black" x="315" y="220">R/2</text>
+
+                <text fill="black" x="160" y="220">-R/2</text>
+                <text fill="black" x="90" y="220">-R</text>
+
+                <text fill="black" x="490" y="240">x</text>
+                <text fill="black" x="235" y="10">y</text>
+                <polygon class="svg-figure square" fill="plum" fill-opacity="0.40" stroke="pink"
+                    points="100,70 100,220 250,220 250,70"></polygon>
+
+                <polygon class="svg-figure triangle" fill="plum" fill-opacity="0.40" stroke="pink"
+                    points="100,220 250,220 250,370"></polygon>
+
+                <path class="svg-figure circle" fill="plum" fill-opacity="0.40" stroke="pink"
+                    d="M325,220 Q325,160 250,145 L 250 220 Z"></path>
+                <circle r="0" cx="250" cy="225" id="point"></circle>
+            </svg>
+
+
+        </div>
+
+
+    </div>
+    <form class="data-send-form " id="form" oninput="onInpChange()">
+        <div class="r-values" id="r_select">
+            <label>R:</label>
+            <label>
+                <input class="r-radio" type="radio" name="r_value" value="1">
+                <span>1</span>
+            </label>
+            <label>
+                <input class="r-radio" type="radio" name="r_value" value="2">
+                <span>2</span>
+            </label>
+            <label>
+                <input class="r-radio" type="radio" name="r_value" value="3" checked>
+                <span>3</span>
+            </label>
+            <label>
+                <input class="r-radio" type="radio" name="r_value" value="4">
+                <span>4</span>
+            </label>
+            <label>
+                <input class="r-radio" type="radio" name="r_value" value="5">
+                <span>5</span>
+            </label>
+        </div>
+        <div class="form-inputs ">
+            <label for="x-value-select" class="form-label">
+                <a>X:</a>
+            </label>
+            <select id="x-value-select" name="x_value">
+                <option value="-3">-3</option>
+                <option>-2</option>
+                <option>-1</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <div class="group">
+                <label for="y-value-select"></label>
+                <label>Y:</label>
+                <input type="text" id="y-value-select" name="y_value" maxlength="15" required placeholder="[-5; 5]">
+            </div>
+
+        </div>
+        <div class="buttons">
+            <button class="send-button" type="submit" id="submitButton">Отправить</button>
+            <button class="clear-button" type="button" id="clearButton">Очистить</button>
+        </div>
+    </form>
+    <span class="error" id="error"> </span>
+
+    <div class="table-form" id="answer">
+
+        <div class="table">
+            <div class="table-header">
+                <div class="header__item"><a id="x-table" class="space">X</a></div>
+                <div class="header__item"><a id="y-table" class="space">Y</a></div>
+                <div class="header__item"><a id="r-table" class="space">R</a></div>
+                <div class="header__item"><a id="result-table" class="space">result</a>
+                </div>
+                <div class="header__item"><a id="time-table" class="space">Time</a>
+                </div>
+                <div class="header__item"><a id="runtime-table" class="space">Runtime</a></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
