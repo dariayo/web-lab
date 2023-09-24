@@ -5,7 +5,7 @@ function setR() {
     elemR = formData.get("r_value");
 }
 
-const onInpChange = function () {
+const checkInput = function () {
     let elemY = $("#y-value-select");
 
     let point = $("#point");
@@ -48,7 +48,7 @@ const onInpChange = function () {
 
 const submit = function (e) {
     e.preventDefault();
-    if (!onInpChange()) {
+    if (!checkInput()) {
         return;
     }
     const formData = new FormData(document.querySelector('#form'));
