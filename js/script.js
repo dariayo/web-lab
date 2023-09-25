@@ -12,24 +12,20 @@ const checkInput = function () {
     let value = Number(elemY.val().replace(",", "."));
     if (value < -5 || value > 5) {
         document.querySelector('#error').textContent = "Y должен быть в диапазоне [-5;5]";
-        elemY.removeClass().addClass("is-invalid");
         point.attr("r", 0);
 
         return false;
     } else if (elemY.val() === "" || /[\s]+/.test(elemY.val())) {
         document.querySelector('#error').textContent = "Заполните поле";
-        elemY.removeClass().addClass("is-invalid");
         point.attr("r", 0);
         return false;
     } else if (!isFinite(value)) {
         document.querySelector('#error').textContent = "Y должен быть числом";
-        elemY.removeClass().addClass("is-invalid");
         point.attr("r", 0);
         return false;
     } else {
 
         document.querySelector('#error').textContent = " ";
-        elemY.removeClass().addClass("is-valid");
         let data = document.getElementById('x-value-select').value;
         let xValue = parseInt(data);
         setR();
