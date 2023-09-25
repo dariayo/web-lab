@@ -185,3 +185,9 @@ div>a {
 header::first-line {
     font-weight: 700;
 }
+
+.triangle, .square, .circle{
+    fill-opacity: 0.40;
+    fill: plum;
+    stroke: pink;
+}
