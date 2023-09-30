@@ -48,7 +48,7 @@ const submit = function (e) {
         return;
     }
     const formData = new FormData(document.querySelector('#form'));
-
+// http библиотека для отправки запросов не axios 
     fetch('php/check.php', {
         method: 'POST',
         body: formData,

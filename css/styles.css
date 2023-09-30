@@ -7,6 +7,7 @@ body {
     overflow-x: auto;
 }
 
+
 /*селектор класса*/
 .content {
     display: flex;
@@ -16,13 +17,13 @@ body {
 
 .header {
     width: 110%;
-    position: relative;
     display: flex;
     font-family: serif;
     font-size: x-large;
     color: black;
     padding: 1%;
     background-color: lightslategray;
+
 }
 
 /* пример каскадирования */
@@ -179,13 +180,13 @@ svg {
     cursor: pointer;
 }
 
-/* селектор дочерних элементов */
-div>a {
+/* селектор псевдоэлементов */
+.header::first-line {
     font-weight: 700;
 }
 
-/* селектор псевдоэлементов */
-header::first-line {
+/* селектор дочерних элементов */
+div>a {
     font-weight: 700;
 }
 
