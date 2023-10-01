@@ -13,7 +13,6 @@ const checkInput = function () {
     if (value < -5 || value > 5) {
         document.querySelector('#error').textContent = "Y должен быть в диапазоне [-5;5]";
         point.attr("r", 0);
-
         return false;
     } else if (elemY.val() === "" || /[\s]+/.test(elemY.val())) {
         document.querySelector('#error').textContent = "Заполните поле";
@@ -24,7 +23,6 @@ const checkInput = function () {
         point.attr("r", 0);
         return false;
     } else {
-
         document.querySelector('#error').textContent = " ";
         let data = document.getElementById('x-value-select').value;
         let xValue = parseInt(data);
@@ -43,12 +41,11 @@ const checkInput = function () {
 };
 
 const submit = function (e) {
-    e.preventDefault();
     if (!checkInput()) {
         return;
     }
     const formData = new FormData(document.querySelector('#form'));
-// http библиотека для отправки запросов не axios 
+
     superagent.post('php/check.php')
         .send(formData)
         .then((res) => {
