@@ -10,11 +10,12 @@ const checkInput = function () {
 
     let point = $("#point");
     let value = Number(elemY.val().replace(",", "."));
+
     if (value < -5 || value > 5) {
         document.querySelector('#error').textContent = "Y должен быть в диапазоне [-5;5]";
         point.attr("r", 0);
         return false;
-    } else if (elemY.val() === "" || /[\s]+/.test(elemY.val())) {
+    } else if (!elemY.val().trim().length > 0) {
         document.querySelector('#error').textContent = "Заполните поле";
         point.attr("r", 0);
         return false;
@@ -23,6 +24,7 @@ const checkInput = function () {
         point.attr("r", 0);
         return false;
     } else {
+        
         document.querySelector('#error').textContent = " ";
         let data = document.getElementById('x-value-select').value;
         let xValue = parseInt(data);
