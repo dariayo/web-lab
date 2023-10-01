@@ -49,20 +49,19 @@ const submit = function (e) {
     }
     const formData = new FormData(document.querySelector('#form'));
 // http библиотека для отправки запросов не axios 
-    fetch('php/check.php', {
-        method: 'POST',
-        body: formData,
-    })
-        .then(answer => answer.text())
-        .then(table => document.querySelector('#answer').innerHTML = table);
+    superagent.post('php/check.php')
+        .send(formData)
+        .then((res) => {
+          document.querySelector('#answer').innerHTML = res.text;
+        });
+
 };
 
 const clear = function (e) {
-    fetch('php/clear.php', {
-        method: 'POST',
-    })
-        .then(answer => answer.text())
-        .then(table => document.querySelector('#answer').innerHTML = table);
+    superagent.post('php/clear.php')
+        .then((res) => {
+          document.querySelector('#answer').innerHTML = res.text;
+        });
 
 };
 
